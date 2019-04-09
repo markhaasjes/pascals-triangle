@@ -4,6 +4,11 @@ const base = css`
   html {
     box-sizing: border-box;
     min-height: 100vh;
+    font-size: calc(1.55 * 1vw);
+
+    @media screen and (min-width: 64em) {
+      font-size: 1em;
+    }
   }
 
   *,
@@ -22,7 +27,7 @@ const base = css`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: white;
-    background: #282c34;
+    background: #1d1e22;
   }
 
   #root {

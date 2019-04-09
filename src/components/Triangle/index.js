@@ -13,8 +13,8 @@ const Container = styled.div`
 `;
 
 /**
- * Base container component for "Pascal's Triangle". Here we define how many rows
- * the triangle needs to have.
+ * Base container component for "Pascal's Triangle". Here we define how many
+ * rows the triangle needs to have.
  */
 class Triangle extends Component {
   constructor(props) {
@@ -28,8 +28,8 @@ class Triangle extends Component {
   render() {
     return (
       <Container>
-        {range(this.state.numRows).map((rowIndex) => (
-          <Row key={`row-${rowIndex + 1}`} rowNumber={rowIndex + 1} />
+        {range(this.state.numRows).map((index) => (
+          <Row key={`row-${index}`} rowIndex={index} />
         ))}
       </Container>
     );
