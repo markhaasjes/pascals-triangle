@@ -1,8 +1,13 @@
 import React from 'react';
 import range from 'lodash.range';
 import math from 'mathjs';
+import styled from 'styled-components/macro';
+import { useSpring, animated } from 'react-spring';
 
-import './Row.css';
+import Number from '../Number';
+
+const AnimatedRow = styled(animated.div)``;
+const AnimatedNumber = styled(Number)``;
 
 /**
  * This component will generate a row with numbers. The amount of numbers on one
@@ -17,13 +22,27 @@ export default function Row({ rowNumber }) {
     math.combinations(rowNumber - 1, numberIndex)
   );
 
+  const animationDelay = 100; // milliseconds
+  const prevRowNumber = rowNumber - 1;
+  const rowDelay = prevRowNumber * (animationDelay * 2) * 2;
+
+  const animationProps = useSpring({
+    from: { opacity: 0 },
+    to: { opacity: 1 },
+    delay: rowDelay,
+  });
+
   return (
-    <div className="Row">
-      {range(rowNumber).map((numberIndex) => (
-        <span key={`row-${rowNumber}-number-${numberIndex}`} className="Number">
-          {numbers[numberIndex]}
-        </span>
+    <AnimatedRow style={animationProps}>
+      {numbers.map((number, index) => (
+        <AnimatedNumber
+          key={`row-${rowNumber}-number-${index + 1}`}
+          index={index + 1}
+          rowDelay={rowDelay}
+          animationDelay={animationDelay}
+          number={number}
+        />
       ))}
-    </div>
+    </AnimatedRow>
   );
 }

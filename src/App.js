@@ -1,13 +1,26 @@
 import React from 'react';
+import styled, { createGlobalStyle } from 'styled-components/macro';
+
+import base from './styles/global/base';
 
 import Triangle from './components/Triangle';
 
-import './App.css';
+const Main = styled.main`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+`;
+
+const GlobalStyle = createGlobalStyle`
+  ${base}
+`;
 
 export default function App() {
   return (
-    <main className="App">
+    <Main>
+      <GlobalStyle />
       <Triangle />
-    </main>
+    </Main>
   );
 }

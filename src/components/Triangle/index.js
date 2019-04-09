@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
+import styled from 'styled-components/macro';
 import range from 'lodash.range';
 
 import Row from '../Row';
 
-import './Triangle.css';
+const Container = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
 
 /**
  * Base container component for "Pascal's Triangle". Here we define how many rows
@@ -20,11 +27,11 @@ class Triangle extends Component {
 
   render() {
     return (
-      <div className="Triangle">
+      <Container>
         {range(this.state.numRows).map((rowIndex) => (
           <Row key={`row-${rowIndex + 1}`} rowNumber={rowIndex + 1} />
         ))}
-      </div>
+      </Container>
     );
   }
 }
