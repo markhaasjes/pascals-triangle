@@ -1,1 +1,3 @@
-# number-sequence
+# Number sequence
+
+Pascal's triangle
