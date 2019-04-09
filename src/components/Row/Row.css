@@ -1,0 +1,8 @@
+.Number {
+  display: inline-block;
+  min-width: 1.5em;
+  padding: 0.5em 1em;
+  text-align: center;
+  border: 1px solid black;
+  margin: 0.1em;
+}

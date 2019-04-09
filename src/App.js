@@ -1,15 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
+
+import Triangle from './components/Triangle';
 
 import './App.css';
 
-class App extends Component {
-  render() {
-    return (
-      <main className="App">
-        Create React App
-      </main>
-    );
-  }
+export default function App() {
+  return (
+    <main className="App">
+      <Triangle />
+    </main>
+  );
 }
-
-export default App;
