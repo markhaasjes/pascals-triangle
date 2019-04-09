@@ -15,7 +15,7 @@
       "dest": "/static/$1"
     },
     { "src": "^/favicon.ico", "dest": "/favicon.ico" },
-    { "src": "^/site.manifest", "dest": "/site.manifest" },
+    { "src": "^/manifest.json", "dest": "/manifest.json" },
     {
       "src": "^/(.*)",
       "headers": { "cache-control": "s-maxage=0" },
