@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "name": "number-sequence",
+  "name": "pascals-triangle",
   "builds": [
     {
       "src": "package.json",

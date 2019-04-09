@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components/macro';
 
-import base from './styles/global/base';
+import base from './styles/base';
 
 import Triangle from './components/Triangle';
 
